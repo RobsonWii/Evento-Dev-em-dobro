@@ -1,0 +1,97 @@
+body {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+main::after { /* usado para colocar um elemento depois elemento da classe em si*/ 
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100vw;
+
+    background: linear-gradient(-233deg, #000000c2 25%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {  
+    display: none;
+    height: 100vh; /* pega toda a tela do dispositivo na vertical */
+}
+
+main .personagem.selecionado {
+    display: block;
+}
+
+main .personagem .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* não deixa distorcer a imagem */
+}
+
+.conteudo {
+    position: absolute; /* faz com que o elemento fique por cima de todos os demais conteúdos */
+    top: 0;
+    left: 120px;
+
+    display: flex; /* para poder deixar o elemento flexivel para poder ser alinhado */
+    flex-direction: column; /* dispõe os elementos em coluna */
+    justify-content: center; /* alinhar o conteudo verticalmente */
+    min-height: 100vh; /* deixa o elemento com 100% do tamanho na altura */
+    max-width: 380px; /* define tamanho máximo de largura */
+    z-index: 1; /* eixo de profundidade, deixa o elemento por cima de outros elementos com a propriedade z-index */
+}
+
+.conteudo .nome-personagem{
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 24px;
+}
+.conteudo .logo {
+    background-image: url("../imagens/mundo-bita-logo.png");
+    background-size: cover; /* usado para cobrir a área definida, usada quando background imagem*/
+    width: 280px;
+    height: 175px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 120px;
+    justify-content: center; /* alinhamento vertical */
+    align-items: center; /* alinhamento horizontal */
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* deixar bordas arredondadas */
+}
+
+.botoes .botao.selecionado{
+    transform: scale(1.2);   /* aumentando o tamanho do elemento em 20% */
+    box-shadow: inset 0 0 10px #e7dfb2; /* sombra na borda do elemento */
+}
+
